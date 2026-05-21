@@ -1,5 +1,5 @@
 # Syngenta
-# AgriPulse 🌾
+# AgriGenius 🌾
 ### *AI-Powered Contextual Marketing & Real-Time Regional Outreach Loop*
 
 Developed by **Team AgriGenius** Submission for Track 1: AI-Powered Agricultural Marketing at Scale (Syngenta Hackathon 2026)
@@ -7,7 +7,7 @@ Developed by **Team AgriGenius** Submission for Track 1: AI-Powered Agricultural
 ---
 
 ## 🎯 Project Overview
-AgriPulse is an enterprise-grade precision marketing and advisory platform that solves the core fragmentation challenge in traditional agricultural broadcasting. Instead of generic mass-media messaging, AgriPulse treats marketing as **advisory-led commerce**, dynamically optimizing campaigns based on hyper-local climatic data, device profiles, language preferences, and episodic pest threats.
+AgriGenius is an enterprise-grade precision marketing and advisory platform that solves the core fragmentation challenge in traditional agricultural broadcasting. Instead of generic mass-media messaging, AgriGenius treats marketing as **advisory-led commerce**, dynamically optimizing campaigns based on hyper-local climatic data, device profiles, language preferences, and episodic pest threats.
 
 ### 🔄 The Inbound-to-Outbound Intelligence Loop
 * **Inbound Field Radar:** Tech-savvy smartphone farmers upload photos or voice memos of diseased crops to our Inbound Diagnostic Lab.
@@ -34,14 +34,3 @@ Our underlying predictive core achieves high classification bounds on synthetic 
 * **AUC-ROC Performance:** 83.5%
 * **F1-Score Balance:** 81.2%
 
-*Note: In the operational dashboard, these data science baselines are cleanly wrapped into an intuitive business metric: **"Recommendation Confidence %"**.*
-
----
-
-## 🚀 Local Installation & Execution
-Follow these steps to run the self-contained, lightweight Python prototype locally.
-
-### 1. Clone the Repository
-```bash
-git clone [https://github.com/YOUR_GITHUB_USERNAME/agripulse.git](https://github.com/YOUR_GITHUB_USERNAME/agripulse.git)
-cd agripulse
