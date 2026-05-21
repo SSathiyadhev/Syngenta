@@ -1,0 +1,5 @@
+# services/__init__.py
+from services.engagement_service import EngagementPredictionService
+from services.content_generation_service import ContentGenerationService
+from services.campaign_service import CampaignService
+from services.diagnostic_service import DiagnosticService
