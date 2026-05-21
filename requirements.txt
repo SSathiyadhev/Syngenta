@@ -1,0 +1,13 @@
+# --- Frontend Interface ---
+streamlit>=1.35.0
+
+# --- Data Manipulation & Analysis ---
+pandas>=2.2.0
+numpy>=1.26.0
+
+# --- Machine Learning & Calibration Engine ---
+scikit-learn>=1.4.0
+joblib>=1.4.0
+
+# --- API Connectivity & External Telemetry ---
+requests>=2.31.0
