@@ -24,13 +24,4 @@ The production design transitions from our edge-contained prototype into a fully
 * **AI Core:** **Calibrated Random Forest Pipeline** (Platt's Scaling for true-probability CTR prediction) + **RAG Engine via Gemini-2.5-Flash** (Context-aware vernacular copy generation) + **Vision API Fallback** (High-fidelity pathology diagnostics).
 * **Data Layer:** Transactional PostgreSQL Cluster (with TimescaleDB extensions) + Snowflake Cloud Data Warehouse + AWS S3 Bucket storage for unstructured assets (voice WAV files and leaf PNG images).
 
----
-
-## 📊 Core Performance Metrics
-Our underlying predictive core achieves high classification bounds on synthetic agricultural communication footprints:
-* **Accuracy Floor:** 84.5%
-* **Precision Vector:** 82.1%
-* **Recall Matrix Bound:** 80.4%
-* **AUC-ROC Performance:** 83.5%
-* **F1-Score Balance:** 81.2%
-
+--
