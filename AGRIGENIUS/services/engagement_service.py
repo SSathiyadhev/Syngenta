@@ -81,8 +81,8 @@ class EngagementPredictionService:
         """Assembles data splits, validates class distributions, and fits a cross-validated classifier."""
         np.random.seed(42)
         
-        growers_path = self.base_dir / "growers.csv"
-        campaign_path = self.base_dir / "whatsapp_message_log.csv"
+        growers_path = self.base_dir / "data" / "growers.csv"
+        campaign_path = self.base_dir / "data" / "whatsapp_campaign.csv"
 
         if not growers_path.exists() or not campaign_path.exists():
             self._execute_baseline_fallback_fit()

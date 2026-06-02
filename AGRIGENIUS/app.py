@@ -15,8 +15,7 @@ from PIL import Image
 st.set_page_config(page_title="Syngenta AgriPulse", page_icon="🌾", layout="wide")
 
 # Root directory dataset path configuration (Forces app to look for CSV files in the current folder)
-DATASET_BASE_DIR = Path(__file__).parent
-
+DATASET_BASE_DIR = Path(__file__).parent / "data"
 from config import app_settings
 from infrastructure.openweather import OpenWeatherProvider
 from infrastructure.knowledge_retriever import LocalKnowledgeRetriever
@@ -78,7 +77,7 @@ def build_application_orchestrator() -> CampaignOrchestrator:
 def ingest_production_datasets(_orchestrator: CampaignOrchestrator) -> tuple[pd.DataFrame, dict]:
     """Ingests raw dataset rows and dynamically assigns baseline risk map values instantly without blocking."""
     growers_file = DATASET_BASE_DIR / "growers.csv"
-    campaign_file = DATASET_BASE_DIR / "whatsapp_message_log.csv"
+    campaign_file = DATASET_BASE_DIR / "whatsapp_campaign.csv"
     
     fallback_df = pd.DataFrame([
         {"state": "Maharashtra", "district": "Akola", "grower_age": 45, "grower_farm_size": 2.5, "lat": 20.7002, "lon": 77.0082, "risk_val": 0.42, "device_type": "smartphone", "language": "Hindi"}
@@ -157,7 +156,21 @@ if mode == "📢 Outbound Campaigns":
     # Graphs
     col_map, col_metrics = st.columns([1.8, 1], gap="medium")
     with col_map:
-        fig = px.scatter_mapbox(growers_df, lat="lat", lon="lon", hover_name="district", color="risk_val", size="grower_farm_size", color_continuous_scale=px.colors.sequential.YlOrRd, size_max=15, zoom=4, mapbox_style="carto-darkmatter")
+        fig = px.scatter_mapbox(growers_df, lat="lat", lon="lon", hover_name="district", color="risk_val", size="grower_farm_size", color_continuous_scale=px.colors.sequential.YlOrRd, size_max=15, zoom=4, mapbox_style = "open-street-map")
+        
+        fig.update_layout(
+            mapbox_layers=[
+                {
+                    "below": "traces",
+                    "sourcetype": "raster",
+                    "opacity": 0.75,
+                    "source": [
+                        "https://mapservice.gov.in/gismapservice/rest/services/BharatMapService/Admin_Boundary_District/MapServer/tile/{z}/{y}/{x}"
+                    ]
+                }
+            ]
+        )      
+        
         fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0}, paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
         st.plotly_chart(fig, use_container_width=True)
         

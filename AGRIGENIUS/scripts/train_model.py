@@ -7,9 +7,8 @@ from sklearn.preprocessing import LabelEncoder
 import joblib
 
 # Load data (adjust paths as needed)
-growers = pd.read_csv("growers.csv")
-whatsapp = pd.read_csv("whatsapp_campaign.csv")   # must have 'clicked_status', 'grower_id'
-
+growers = pd.read_csv("data/growers.csv")
+whatsapp = pd.read_csv("data/whatsapp_campaign.csv")
 # Merge
 df = pd.merge(whatsapp, growers, on="grower_id", how="inner")
 

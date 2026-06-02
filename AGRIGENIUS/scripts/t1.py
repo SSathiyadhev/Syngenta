@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Load the files to see what columns we have
-growers = pd.read_csv("growers.csv")
-campaigns = pd.read_csv("whatsapp_campaign.csv")
+growers = pd.read_csv("data/growers.csv")
+campaigns = pd.read_csv("data/whatsapp_campaign.csv")
 
 print("--- GROWERS COLUMNS ---")
 print(growers.columns.tolist())
