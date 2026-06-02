@@ -43,8 +43,8 @@ class EngagementPredictionService:
 
     def _orchestrate_receptivity_training(self):
         """Merges growers.csv and whatsapp_campaign.csv to train a live campaign engagement model."""
-        growers_path = self.base_dir / "growers.csv"
-        campaign_path = self.base_dir / "whatsapp_campaign.csv"
+        growers_path = self.base_dir / "data" / "growers.csv"
+        campaign_path = self.base_dir / "data" / "whatsapp_campaign.csv"
 
         if not growers_path.exists() or not campaign_path.exists():
             logger.warning("Data files missing from root. Initializing aligned fallback matrix.")
